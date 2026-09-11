@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import type { Technology } from "../../types/technology";
+import { toast } from "react-toastify";
 
+import type { Technology } from "../../types/technology";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import StackSidebar from "../StackSidebar/StackSidebar";
 import TechnologyCard from "../TechnologyCard/TechnologyCard";
@@ -51,6 +52,9 @@ const TechnologySection = () => {
         );
 
         if (isAlreadySelected) {
+            toast.warning(
+                `${technology.name} is already in your stack.`
+            );
             return;
         }
 
@@ -58,18 +62,40 @@ const TechnologySection = () => {
             ...previous,
             technology,
         ]);
+
+        toast.success(
+            `${technology.name} added to your stack.`
+        );
     };
 
     const handleRemoveTechnology = (id: string) => {
+        const technologyToRemove = selectedTechnologies.find(
+            (technology) => technology.id === id
+        );
+
         setSelectedTechnologies((previous) =>
             previous.filter(
                 (technology) => technology.id !== id
             )
         );
+
+        if (technologyToRemove) {
+            toast.info(
+                `${technologyToRemove.name} removed from your stack.`
+            );
+        }
     };
 
     const handleRemoveAll = () => {
+        if (selectedTechnologies.length === 0) {
+            return;
+        }
+
         setSelectedTechnologies([]);
+
+        toast.info(
+            "All technologies removed from your stack."
+        );
     };
 
     return (
@@ -103,7 +129,6 @@ const TechnologySection = () => {
                     </div>
                 ) : (
                     <div className="mt-8 grid items-start gap-7 lg:grid-cols-[minmax(0,1fr)_260px] xl:grid-cols-[minmax(0,1fr)_280px]">
-
                         {/* Technology Grid */}
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                             {technologies.map((technology) => (
