@@ -40,7 +40,7 @@ const Footer = () => {
                 <div>
                     <Brand />
 
-                    <p className="mt-4 max-w-xs text-[11px] leading-5 text-slate-500">
+                    <p className="mt-4 max-w-xs text-sm leading-6 text-slate-500">
                         Curated tools, technologies, and resources for developers building
                         modern software.
                     </p>
@@ -69,7 +69,7 @@ const Footer = () => {
                 {/* Footer Link Groups */}
                 {footerGroups.map((group) => (
                     <div key={group.title}>
-                        <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-900">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">
                             {group.title}
                         </h3>
 
@@ -78,7 +78,7 @@ const Footer = () => {
                                 <li key={link}>
                                     <a
                                         href="#"
-                                        className="text-[10px] text-slate-500 transition-colors duration-200 hover:text-pink-500"
+                                        className="text-xs text-slate-500 transition-colors duration-200 hover:text-pink-500"
                                     >
                                         {link}
                                     </a>
@@ -91,7 +91,7 @@ const Footer = () => {
 
             {/* Footer Bottom Bar */}
             <div className="border-t border-slate-100">
-                <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-3 px-4 py-5 text-[9px] text-slate-400 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
+                <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-3 px-4 py-5 text-xs text-slate-400 sm:flex-row sm:justify-between sm:px-6 lg:px-8">
                     <p>
                         © {currentYear} Dev Stack. All rights reserved.
                     </p>

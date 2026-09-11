@@ -19,11 +19,11 @@ const StackItem = ({
             />
 
             <div className="min-w-0 flex-1">
-                <h4 className="truncate text-xs font-semibold text-slate-900">
+                <h4 className="truncate text-sm font-semibold text-slate-900">
                     {technology.name}
                 </h4>
 
-                <p className="mt-0.5 text-[9px] text-slate-500">
+                <p className="mt-0.5 text-xs text-slate-500">
                     {technology.category}
                 </p>
             </div>
@@ -32,7 +32,7 @@ const StackItem = ({
                 type="button"
                 onClick={() => onRemove(technology.id)}
                 aria-label={`Remove ${technology.name} from stack`}
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-slate-400 transition hover:bg-red-50 hover:text-red-500"
+                className="flex h-7 w-7 shrink-0 cursor-pointer items-center justify-center rounded-md text-slate-400 transition hover:bg-red-50 hover:text-red-500"
             >
                 <X size={14} />
             </button>

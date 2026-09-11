@@ -41,7 +41,7 @@ const TechnologyCard = ({
                 />
 
                 <span
-                    className={`rounded-full px-2.5 py-1 text-[9px] font-semibold ${getBadgeStyles(
+                    className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${getBadgeStyles(
                         technology.badge
                     )}`}
                 >
@@ -49,25 +49,25 @@ const TechnologyCard = ({
                 </span>
             </div>
 
-            <h3 className="mt-4 text-base font-bold text-slate-900">
+            <h3 className="mt-4 text-lg font-bold text-slate-900">
                 {technology.name}
             </h3>
 
-            <p className="mt-2 text-[11px] leading-5 text-slate-500">
+            <p className="mt-2 text-[13px] leading-5 text-slate-500">
                 {technology.description}
             </p>
 
             <div className="mt-auto pt-5">
                 <div className="mb-4 flex items-center justify-between gap-2">
-                    <span className="rounded bg-slate-100 px-2 py-1 text-[9px] font-medium text-slate-600">
+                    <span className="rounded bg-slate-100 px-2 py-1 text-[11px] font-medium text-slate-600">
                         {technology.category}
                     </span>
 
-                    <span className="min-w-0 truncate text-[9px] text-slate-500">
+                    <span className="min-w-0 truncate text-[11px] text-slate-500">
                         {technology.difficulty}
                     </span>
 
-                    <span className="flex shrink-0 items-center gap-1 text-[9px] font-semibold text-orange-500">
+                    <span className="flex shrink-0 items-center gap-1 text-[11px] font-semibold text-orange-500">
                         <Star
                             size={11}
                             fill="currentColor"
@@ -81,9 +81,9 @@ const TechnologyCard = ({
                     type="button"
                     onClick={() => onAdd(technology)}
                     aria-disabled={isSelected}
-                    className={`w-full rounded-md py-2.5 text-[10px] font-semibold transition ${isSelected
+                    className={`w-full rounded-md py-2.5 text-xs font-semibold transition ${isSelected
                             ? "cursor-not-allowed bg-slate-200 text-slate-500"
-                            : "bg-slate-900 text-white hover:bg-slate-800"
+                            : "cursor-pointer bg-slate-900 text-white hover:bg-slate-800"
                         }`}
                 >
                     {isSelected ? "✓ Added to Stack" : "Add to Stack"}

@@ -107,12 +107,12 @@ const TechnologySection = () => {
                 <div>
                     <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
                         Explore the{" "}
-                        <span className="gradient-text">
+                        <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-transparent">
                             Technologies
                         </span>
                     </h2>
 
-                    <p className="mt-2 text-sm text-slate-500">
+                    <p className="mt-2 text-base leading-6 text-slate-500">
                         Pick the technologies you need to build your ideal
                         development stack.
                     </p>
@@ -122,7 +122,7 @@ const TechnologySection = () => {
                     <LoadingSpinner />
                 ) : error ? (
                     <div
-                        className="mt-8 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-600"
+                        className="mt-8 rounded-lg border border-red-200 bg-red-50 p-4 text-base text-red-600"
                         role="alert"
                     >
                         {error}
