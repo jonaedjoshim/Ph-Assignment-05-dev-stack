@@ -66,7 +66,7 @@ const Navbar = () => {
 
                     <button
                         type="button"
-                        className="brand-gradient rounded-full px-3 py-2 text-[9px] font-semibold text-white transition hover:opacity-90 sm:px-4 sm:text-xs"
+                        className="bg-pink-600 text-white hover:bg-pink-500 rounded-full px-3 py-2 text-[9px] font-semibold transition hover:opacity-90 sm:px-4 sm:text-xs"
                     >
                         Sign Up
                     </button>
