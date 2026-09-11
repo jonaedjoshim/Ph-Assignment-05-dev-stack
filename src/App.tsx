@@ -1,13 +1,22 @@
-import Brand from "./components/Brand/Brand";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-slate-50 gap-4">
-      <h1 className="text-2xl font-semibold text-slate-700">
-        Theme & Brand Setup Test
-      </h1>
-      <Brand />
-    </main>
+    <>
+      <Navbar />
+
+      <main className="min-h-[150vh] bg-slate-50 px-4 py-20">
+        <div className="mx-auto max-w-7xl">
+          <h1 className="text-center text-3xl font-bold text-slate-900">
+            Navbar Setup
+          </h1>
+
+          <p className="mt-3 text-center text-sm text-slate-500">
+            Scroll the page to test the sticky navigation.
+          </p>
+        </div>
+      </main>
+    </>
   );
 }
 
