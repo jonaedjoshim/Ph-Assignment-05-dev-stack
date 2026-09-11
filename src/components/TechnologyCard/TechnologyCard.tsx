@@ -3,6 +3,8 @@ import type { Technology } from "../../types/technology";
 
 interface TechnologyCardProps {
     technology: Technology;
+    isSelected: boolean;
+    onAdd: (technology: Technology) => void;
 }
 
 const getBadgeStyles = (badge: string) => {
@@ -24,10 +26,13 @@ const getBadgeStyles = (badge: string) => {
     return badgeStyles[badge] ?? "bg-slate-100 text-slate-500";
 };
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({
+    technology,
+    isSelected,
+    onAdd,
+}: TechnologyCardProps) => {
     return (
-        <article className="flex min-h-[270px] flex-col rounded-xl border border-slate-200 bg-white p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
-            {/* Technology Icon + Badge */}
+        <article className="flex min-h-67.5 flex-col rounded-xl border border-slate-200 bg-white p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-md">
             <div className="flex items-start justify-between gap-4">
                 <img
                     src={technology.icon}
@@ -44,7 +49,6 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
                 </span>
             </div>
 
-            {/* Technology Information */}
             <h3 className="mt-4 text-base font-bold text-slate-900">
                 {technology.name}
             </h3>
@@ -53,7 +57,6 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
                 {technology.description}
             </p>
 
-            {/* Technology Meta + Action */}
             <div className="mt-auto pt-5">
                 <div className="mb-4 flex items-center justify-between gap-2">
                     <span className="rounded bg-slate-100 px-2 py-1 text-[9px] font-medium text-slate-600">
@@ -76,9 +79,14 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
 
                 <button
                     type="button"
-                    className="w-full rounded-md bg-slate-900 py-2.5 text-[10px] font-semibold text-white transition hover:bg-slate-800"
+                    onClick={() => onAdd(technology)}
+                    aria-disabled={isSelected}
+                    className={`w-full rounded-md py-2.5 text-[10px] font-semibold transition ${isSelected
+                            ? "cursor-not-allowed bg-slate-200 text-slate-500"
+                            : "bg-slate-900 text-white hover:bg-slate-800"
+                        }`}
                 >
-                    Add to Stack
+                    {isSelected ? "✓ Added to Stack" : "Add to Stack"}
                 </button>
             </div>
         </article>
